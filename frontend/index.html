@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Tinder</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading" class="screen active">
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <h2>🎁 Gift Tinder</h2>
+                <p>Загружаем подарки...</p>
+            </div>
+        </div>
+
+        <!-- Main Swipe Screen -->
+        <div id="swipe-screen" class="screen">
+            <div class="header">
+                <h1>🎁 Gift Tinder</h1>
+                <div class="nav-buttons">
+                    <button id="profile-btn" class="nav-btn">👤</button>
+                    <button id="matches-btn" class="nav-btn">💕</button>
+                </div>
+            </div>
+
+            <div class="gift-container">
+                <div id="gift-card" class="gift-card">
+                    <div class="gift-image">
+                        <img id="gift-img" src="" alt="Gift">
+                    </div>
+                    <div class="gift-info">
+                        <h3 id="gift-name">Загрузка...</h3>
+                        <p id="gift-description">Описание подарка</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swipe-buttons">
+                <button id="dislike-btn" class="swipe-btn dislike">👎</button>
+                <button id="like-btn" class="swipe-btn like">👍</button>
+            </div>
+
+            <div class="no-more-gifts" id="no-more-gifts" style="display: none;">
+                <h3>🎉 Подарки закончились!</h3>
+                <p>Попробуйте позже или добавьте больше подарков</p>
+                <button id="refresh-btn" class="refresh-btn">Обновить</button>
+            </div>
+        </div>
+
+        <!-- Profile Screen -->
+        <div id="profile-screen" class="screen">
+            <div class="header">
+                <button id="back-btn" class="back-btn">←</button>
+                <h2>👤 Мой профиль</h2>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-info">
+                    <div class="avatar">
+                        <img id="user-avatar" src="" alt="Avatar">
+                    </div>
+                    <h3 id="user-name">Пользователь</h3>
+                    <p id="user-username">@username</p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="gifts-count">0</span>
+                        <span class="stat-label">Подарков</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="matches-count">0</span>
+                        <span class="stat-label">Мэтчей</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="swipes-count">0</span>
+                        <span class="stat-label">Свайпов</span>
+                    </div>
+                </div>
+                
+                <div class="my-gifts">
+                    <h4>Мои подарки</h4>
+                    <div id="my-gifts-list" class="gifts-list">
+                        <!-- Gifts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matches Screen -->
+        <div id="matches-screen" class="screen">
+            <div class="header">
+                <button id="back-btn-matches" class="back-btn">←</button>
+                <h2>💕 Мои мэтчи</h2>
+            </div>
+            
+            <div class="matches-content">
+                <div id="matches-list" class="matches-list">
+                    <!-- Matches will be loaded here -->
+                </div>
+                
+                <div id="no-matches" class="no-matches" style="display: none;">
+                    <h3>😔 Пока нет мэтчей</h3>
+                    <p>Продолжайте свайпать подарки, чтобы найти мэтчи!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match Notification -->
+        <div id="match-notification" class="match-notification" style="display: none;">
+            <div class="match-content">
+                <h3>💕 Новый мэтч!</h3>
+                <p id="match-user-name">Вы понравились друг другу!</p>
+                <button id="view-match-btn" class="view-match-btn">Посмотреть</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
